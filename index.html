@@ -1,1023 +1,188 @@
-Index · HTML
-Copy
-
 <!DOCTYPE HTML>
 <!--
-	Massively by HTML5 UP — customized for Mohinder Bassi
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-<head>
-	<title>Mohinder Bassi — Data Scientist & AI Researcher</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<meta name="description" content="Mohinder Bassi — Data Scientist and AI Researcher with 10+ years bridging academia and industry across India and Canada. BMO, AWS, Dataiku, NLP, GenAI." />
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=IBM+Plex+Mono:wght@400;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
- 
-	<style>
-		/* ── DESIGN TOKENS ───────────────────────────────────────── */
-		:root {
-			--navy:   #1B3A6B;
-			--blue:   #2563EB;
-			--teal:   #0891B2;
-			--light:  #EFF6FF;
-			--slate:  #475569;
-			--mid:    #94A3B8;
-			--gold:   #F59E0B;
-			--white:  #F8FAFC;
- 
-			--ff-display: 'Playfair Display', Georgia, serif;
-			--ff-body:    'DM Sans', sans-serif;
-			--ff-mono:    'IBM Plex Mono', monospace;
-		}
- 
-		/* ── GLOBAL OVERRIDES ────────────────────────────────────── */
-		body, input, select, textarea {
-			font-family: var(--ff-body);
-		}
- 
-		h1, h2, h3, h4 {
-			font-family: var(--ff-display);
-			letter-spacing: -0.02em;
-		}
- 
-		/* ── INTRO / HERO ────────────────────────────────────────── */
-		#intro {
-			background: linear-gradient(135deg, #0a1628 0%, #1B3A6B 55%, #1e4d8c 100%);
-			position: relative;
-			overflow: hidden;
-		}
-		#intro::before {
-			content: '';
-			position: absolute;
-			inset: 0;
-			background:
-				radial-gradient(ellipse 60% 50% at 80% 20%, rgba(37,99,235,0.18) 0%, transparent 70%),
-				radial-gradient(ellipse 40% 60% at 10% 80%, rgba(8,145,178,0.12) 0%, transparent 70%);
-			pointer-events: none;
-		}
-		#intro::after {
-			content: '';
-			position: absolute;
-			top: 0; left: 0; right: 0;
-			height: 3px;
-			background: linear-gradient(90deg, var(--teal), var(--blue), var(--gold));
-		}
- 
-		#intro h1 {
-			font-size: clamp(2.8rem, 6vw, 5.2rem);
-			font-weight: 900;
-			line-height: 1.05;
-			color: #fff;
-			text-shadow: 0 2px 40px rgba(0,0,0,0.4);
-			font-family: var(--ff-display);
-		}
-		#intro .tagline {
-			font-family: var(--ff-mono);
-			font-size: 0.78rem;
-			color: var(--teal);
-			letter-spacing: 0.15em;
-			text-transform: uppercase;
-			margin-bottom: 1rem;
-			opacity: 0.9;
-		}
-		#intro p {
-			color: rgba(248,250,252,0.82);
-			font-size: 1.05rem;
-			max-width: 560px;
-			line-height: 1.75;
-			font-weight: 300;
-		}
-		.intro-badge {
-			display: inline-flex;
-			align-items: center;
-			gap: 0.5rem;
-			background: rgba(255,255,255,0.08);
-			border: 1px solid rgba(255,255,255,0.12);
-			border-radius: 2rem;
-			padding: 0.35rem 0.9rem;
-			font-size: 0.78rem;
-			color: rgba(255,255,255,0.75);
-			margin: 0.3rem 0.2rem;
-			font-family: var(--ff-mono);
-			backdrop-filter: blur(4px);
-		}
-		.intro-badge .dot {
-			width: 6px; height: 6px;
-			border-radius: 50%;
-			background: var(--teal);
-			display: inline-block;
-			animation: pulse 2s ease-in-out infinite;
-		}
-		@keyframes pulse {
-			0%, 100% { opacity: 1; transform: scale(1); }
-			50%       { opacity: 0.5; transform: scale(0.7); }
-		}
- 
-		/* ── SECTION LABELS ──────────────────────────────────────── */
-		.section-label {
-			font-family: var(--ff-mono);
-			font-size: 0.72rem;
-			letter-spacing: 0.2em;
-			text-transform: uppercase;
-			color: var(--blue);
-			margin-bottom: 0.5rem;
-			display: block;
-		}
- 
-		/* ── AWARD RIBBON ────────────────────────────────────────── */
-		.award-ribbon {
-			display: inline-flex;
-			align-items: center;
-			gap: 0.4rem;
-			background: linear-gradient(135deg, #92400e, #F59E0B);
-			color: #fff;
-			font-size: 0.68rem;
-			font-family: var(--ff-mono);
-			font-weight: 600;
-			letter-spacing: 0.1em;
-			padding: 0.2rem 0.6rem;
-			border-radius: 2px;
-			text-transform: uppercase;
-		}
-		.award-ribbon::before { content: '★ '; }
- 
-		/* ── SKILL TAGS ──────────────────────────────────────────── */
-		.skill-tags {
-			display: flex;
-			flex-wrap: wrap;
-			gap: 0.45rem;
-			margin-top: 0.6rem;
-		}
-		.skill-tag {
-			background: rgba(37,99,235,0.1);
-			border: 1px solid rgba(37,99,235,0.25);
-			color: #2563EB;
-			font-size: 0.75rem;
-			font-family: var(--ff-mono);
-			padding: 0.22rem 0.6rem;
-			border-radius: 3px;
-			white-space: nowrap;
-		}
-		.skill-tag.teal {
-			background: rgba(8,145,178,0.1);
-			border-color: rgba(8,145,178,0.3);
-			color: var(--teal);
-		}
-		.skill-tag.gold {
-			background: rgba(245,158,11,0.1);
-			border-color: rgba(245,158,11,0.3);
-			color: #92400e;
-		}
- 
-		/* ── STAT CARDS ──────────────────────────────────────────── */
-		.stat-strip {
-			display: grid;
-			grid-template-columns: repeat(4, 1fr);
-			gap: 0;
-			background: var(--navy);
-			margin: 2rem 0;
-			border-radius: 4px;
-			overflow: hidden;
-		}
-		.stat-item {
-			padding: 1.8rem 1.5rem;
-			text-align: center;
-			border-right: 1px solid rgba(255,255,255,0.07);
-			position: relative;
-		}
-		.stat-item:last-child { border-right: none; }
-		.stat-item::after {
-			content: '';
-			position: absolute;
-			bottom: 0; left: 20%; right: 20%;
-			height: 2px;
-			background: var(--blue);
-			opacity: 0;
-			transition: opacity 0.3s;
-		}
-		.stat-item:hover::after { opacity: 1; }
-		.stat-num {
-			font-family: var(--ff-display);
-			font-size: 2.4rem;
-			font-weight: 900;
-			color: #fff;
-			line-height: 1;
-			display: block;
-		}
-		.stat-num span { color: var(--gold); }
-		.stat-lbl {
-			font-family: var(--ff-mono);
-			font-size: 0.68rem;
-			color: var(--mid);
-			letter-spacing: 0.12em;
-			text-transform: uppercase;
-			margin-top: 0.4rem;
-			display: block;
-		}
- 
-		/* ── EXPERIENCE TIMELINE ─────────────────────────────────── */
-		.timeline {
-			position: relative;
-			padding-left: 2rem;
-		}
-		.timeline::before {
-			content: '';
-			position: absolute;
-			left: 0;
-			top: 0.5rem;
-			bottom: 0.5rem;
-			width: 2px;
-			background: linear-gradient(180deg, var(--blue), var(--teal), rgba(8,145,178,0.1));
-		}
-		.timeline-item {
-			position: relative;
-			margin-bottom: 2.5rem;
-		}
-		.timeline-item::before {
-			content: '';
-			position: absolute;
-			left: -2.4rem;
-			top: 0.35rem;
-			width: 10px; height: 10px;
-			border-radius: 50%;
-			background: var(--blue);
-			border: 2px solid #fff;
-			box-shadow: 0 0 0 3px rgba(37,99,235,0.25);
-		}
-		.timeline-date {
-			font-family: var(--ff-mono);
-			font-size: 0.7rem;
-			color: var(--teal);
-			letter-spacing: 0.1em;
-			text-transform: uppercase;
-			margin-bottom: 0.25rem;
-		}
-		.timeline-role {
-			font-family: var(--ff-display);
-			font-size: 1.15rem;
-			font-weight: 700;
-			color: #fff;
-			margin: 0;
-		}
-		.timeline-org {
-			font-size: 0.85rem;
-			color: var(--mid);
-			margin-bottom: 0.7rem;
-		}
-		.timeline-bullets {
-			list-style: none;
-			margin: 0; padding: 0;
-		}
-		.timeline-bullets li {
-			font-size: 0.88rem;
-			color: rgba(255,255,255,0.65);
-			padding: 0.22rem 0 0.22rem 1rem;
-			position: relative;
-			line-height: 1.55;
-		}
-		.timeline-bullets li::before {
-			content: '▸';
-			position: absolute;
-			left: 0;
-			color: var(--blue);
-			font-size: 0.75rem;
-		}
- 
-		/* ── RESEARCH CARDS ──────────────────────────────────────── */
-		.research-grid {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			gap: 1.5rem;
-		}
-		.research-card {
-			background: #0d1f3c;
-			border: 1px solid rgba(37,99,235,0.15);
-			border-radius: 6px;
-			padding: 1.6rem;
-			position: relative;
-			overflow: hidden;
-			transition: border-color 0.3s, transform 0.3s;
-		}
-		.research-card:hover {
-			border-color: rgba(37,99,235,0.4);
-			transform: translateY(-3px);
-		}
-		.research-card::before {
-			content: '';
-			position: absolute;
-			top: 0; left: 0; right: 0;
-			height: 3px;
-		}
-		.research-card:nth-child(1)::before { background: var(--blue); }
-		.research-card:nth-child(2)::before { background: var(--teal); }
-		.research-card:nth-child(3)::before { background: var(--gold); }
-		.research-num {
-			font-family: var(--ff-mono);
-			font-size: 0.68rem;
-			color: var(--mid);
-			letter-spacing: 0.15em;
-			margin-bottom: 0.8rem;
-		}
-		.research-card h3 {
-			font-size: 1rem;
-			font-weight: 700;
-			color: #fff;
-			margin-bottom: 0.7rem;
-			line-height: 1.35;
-			font-family: var(--ff-display);
-		}
-		.research-card p {
-			font-size: 0.84rem;
-			color: rgba(255,255,255,0.58);
-			line-height: 1.65;
-			margin: 0;
-		}
- 
-		/* ── SKILL MATRIX ────────────────────────────────────────── */
-		.skill-matrix {
-			display: grid;
-			grid-template-columns: repeat(2, 1fr);
-			gap: 1.2rem;
-		}
-		.skill-group {
-			background: #0d1f3c;
-			border: 1px solid rgba(37,99,235,0.12);
-			border-radius: 5px;
-			padding: 1.3rem 1.4rem;
-		}
-		.skill-group-label {
-			font-family: var(--ff-mono);
-			font-size: 0.68rem;
-			letter-spacing: 0.18em;
-			text-transform: uppercase;
-			color: var(--teal);
-			margin-bottom: 0.8rem;
-			display: flex;
-			align-items: center;
-			gap: 0.5rem;
-		}
-		.skill-group-label::after {
-			content: '';
-			flex: 1;
-			height: 1px;
-			background: rgba(8,145,178,0.2);
-		}
- 
-		/* ── AWARD CARDS ─────────────────────────────────────────── */
-		.award-card {
-			display: flex;
-			align-items: flex-start;
-			gap: 1rem;
-			padding: 1.1rem 1.3rem;
-			background: #0d1f3c;
-			border: 1px solid rgba(245,158,11,0.15);
-			border-radius: 5px;
-			margin-bottom: 0.8rem;
-		}
-		.award-icon {
-			font-size: 1.4rem;
-			flex-shrink: 0;
-			line-height: 1;
-			margin-top: 0.1rem;
-		}
-		.award-title {
-			font-weight: 600;
-			font-size: 0.92rem;
-			color: #fff;
-			margin-bottom: 0.2rem;
-		}
-		.award-desc {
-			font-size: 0.8rem;
-			color: var(--mid);
-			line-height: 1.5;
-			margin: 0;
-		}
- 
-		/* ── CERT GRID ───────────────────────────────────────────── */
-		.cert-grid {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			gap: 0.7rem;
-		}
-		.cert-item {
-			background: #0d1f3c;
-			border: 1px solid rgba(37,99,235,0.12);
-			border-radius: 4px;
-			padding: 0.75rem 0.9rem;
-			display: flex;
-			align-items: center;
-			gap: 0.6rem;
-			font-size: 0.8rem;
-			color: rgba(255,255,255,0.72);
-		}
-		.cert-logo {
-			font-family: var(--ff-mono);
-			font-size: 0.65rem;
-			font-weight: 600;
-			color: var(--blue);
-			background: rgba(37,99,235,0.12);
-			padding: 0.2rem 0.4rem;
-			border-radius: 2px;
-			white-space: nowrap;
-			flex-shrink: 0;
-		}
- 
-		/* ── NAV CUSTOMIZATION ───────────────────────────────────── */
-		#nav a.logo-name {
-			font-family: var(--ff-display);
-			font-weight: 700;
-		}
- 
-		/* ── FOOTER CUSTOMIZATION ────────────────────────────────── */
-		#footer .contact-info a {
-			color: var(--teal);
-		}
- 
-		/* ── POST CARD OVERRIDES ─────────────────────────────────── */
-		#main .post article.featured-project {
-			background: #0d1f3c;
-			border: 1px solid rgba(37,99,235,0.15);
-			border-radius: 6px;
-			padding: 1.8rem;
-			margin-bottom: 1.5rem;
-		}
- 
-		/* ── HIGHLIGHT QUOTE ─────────────────────────────────────── */
-		.highlight-quote {
-			border-left: 3px solid var(--blue);
-			padding: 0.8rem 1.2rem;
-			background: rgba(37,99,235,0.06);
-			border-radius: 0 4px 4px 0;
-			font-size: 0.88rem;
-			color: rgba(255,255,255,0.7);
-			font-style: italic;
-			margin: 1rem 0;
-			line-height: 1.6;
-		}
- 
-		/* ── RESPONSIVE ──────────────────────────────────────────── */
-		@media (max-width: 768px) {
-			.stat-strip { grid-template-columns: repeat(2, 1fr); }
-			.research-grid { grid-template-columns: 1fr; }
-			.skill-matrix { grid-template-columns: 1fr; }
-			.cert-grid { grid-template-columns: repeat(2, 1fr); }
-		}
-		@media (max-width: 480px) {
-			.stat-strip { grid-template-columns: 1fr 1fr; }
-			.cert-grid { grid-template-columns: 1fr; }
-		}
-	</style>
-</head>
- 
-<body class="is-preload">
-<div id="wrapper">
- 
-<!-- ══════════════ HEADER ══════════════ -->
-<header id="header">
-	<a href="index.html" class="logo logo-name">Mohinder Bassi</a>
-</header>
- 
-<!-- ══════════════ NAV ══════════════ -->
-<nav id="nav">
-	<ul class="links">
-		<li class="active"><a href="#intro">Home</a></li>
-		<li><a href="#experience">Experience</a></li>
-		<li><a href="#research">Research</a></li>
-		<li><a href="#skills">Skills</a></li>
-		<li><a href="#awards">Awards</a></li>
-	</ul>
-	<ul class="icons">
-		<li><a href="https://www.linkedin.com/in/mohinder-bassi-14903aaa/" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
-		<li><a href="https://github.com/mohinderbassi" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
-	</ul>
-</nav>
- 
-<!-- ══════════════ MAIN ══════════════ -->
-<div id="main">
- 
-<!-- ── HERO ──────────────────────────────────────────────────── -->
-<article class="post featured" id="intro">
-	<header class="major">
-		<span class="tagline">Data Scientist &amp; AI Researcher</span>
-		<h1>Mohinder<br />Bassi</h1>
-		<div style="margin: 1rem 0;">
-			<span class="intro-badge"><span class="dot"></span>Toronto, Canada</span>
-			<span class="intro-badge">🇨🇦 Canadian Citizen</span>
-			<span class="intro-badge">10+ Years Experience</span>
-			<span class="intro-badge">3× BMO Spotlight Award</span>
-		</div>
-		<p>
-			I build AI systems that transform how people find, trust, and act on information —
-			from ML-powered incident prediction at one of Canada's largest banks, to NLP pipelines
-			serving millions of transactions, to RL-based conversational agents built before LLMs
-			went mainstream. With roots in academic research and a decade of production deployments,
-			I bring a rare combination of rigour and real-world impact.
-		</p>
-	</header>
-	<ul class="actions special">
-		<li><a href="mailto:mohinderbassi@gmail.com" class="button large primary">Get In Touch</a></li>
-		<li><a href="#experience" class="button large">View Work</a></li>
-	</ul>
-</article>
- 
-<!-- ── STAT STRIP ─────────────────────────────────────────────── -->
-<section style="padding: 0 0 2rem;">
-	<div class="stat-strip">
-		<div class="stat-item">
-			<span class="stat-num">10<span>+</span></span>
-			<span class="stat-lbl">Years Experience</span>
-		</div>
-		<div class="stat-item">
-			<span class="stat-num">5<span>×</span></span>
-			<span class="stat-lbl">Spotlight Awards</span>
-		</div>
-		<div class="stat-item">
-			<span class="stat-num">487<span>%</span></span>
-			<span class="stat-lbl">Revenue Growth Driven</span>
-		</div>
-		<div class="stat-item">
-			<span class="stat-num">$4<span>M</span></span>
-			<span class="stat-lbl">Platform Asset Managed</span>
-		</div>
-	</div>
-</section>
- 
-<!-- ── FEATURED PROJECTS ──────────────────────────────────────── -->
-<section class="posts" id="projects">
-	<header style="grid-column: 1 / -1; margin-bottom: 0.5rem;">
-		<span class="section-label">Featured Work</span>
-		<h2 style="font-family: var(--ff-display); margin: 0;">Production AI Systems</h2>
-	</header>
- 
-	<article>
-		<header>
-			<span class="award-ribbon">BMO Spotlight Award</span>
-			<h2 style="margin-top:0.7rem;"><a href="#">ITSM Change-Risk<br />Prediction Model</a></h2>
-		</header>
-		<p>ML system that detects high-risk infrastructure changes before they trigger incidents or outages. Uses NLP on unstructured change records plus historical telemetry to proactively flag changes requiring review — deployed live in BMO's production ITSM workflow.</p>
-		<div class="skill-tags">
-			<span class="skill-tag">NLP</span>
-			<span class="skill-tag">Classification</span>
-			<span class="skill-tag teal">Dataiku</span>
-			<span class="skill-tag teal">Python</span>
-			<span class="skill-tag">Production ML</span>
-		</div>
-	</article>
- 
-	<article>
-		<header>
-			<span class="award-ribbon">BMO Spotlight Award</span>
-			<h2 style="margin-top:0.7rem;"><a href="#">AI Resiliency<br />Scoring Dashboard</a></h2>
-		</header>
-		<p>Automated multi-signal scoring pipeline computing continuous application health scores across BMO's full technology portfolio. Combines availability metrics, incident history, and dependency graph data — built on Dataiku DSS with Power BI visualization serving senior tech-risk leadership.</p>
-		<div class="skill-tags">
-			<span class="skill-tag teal">Dataiku DSS</span>
-			<span class="skill-tag">AWS Redshift</span>
-			<span class="skill-tag">Neo4j</span>
-			<span class="skill-tag teal">Power BI</span>
-			<span class="skill-tag">IBM Netezza</span>
-		</div>
-	</article>
- 
-	<article>
-		<header>
-			<span class="award-ribbon">BMO Spotlight Award</span>
-			<h2 style="margin-top:0.7rem;"><a href="#">T&amp;O Management<br />Reporting Platform</a></h2>
-		</header>
-		<p>Enterprise-wide dashboard synthesizing workforce and vendor performance data across 8 business units. Delivered C-suite intelligence on vendor contracts and restructuring decisions. Automated end-to-end data ingestion from IBM Netezza, AWS Redshift, and MariaDB via AWS Glue and Power Automate.</p>
-		<div class="skill-tags">
-			<span class="skill-tag">AWS Glue</span>
-			<span class="skill-tag teal">Power Automate</span>
-			<span class="skill-tag">MariaDB</span>
-			<span class="skill-tag teal">Dataiku</span>
-			<span class="skill-tag">Executive BI</span>
-		</div>
-	</article>
- 
-	<article>
-		<header>
-			<h2><a href="#">Recommender System<br />on AWS SageMaker</a></h2>
-		</header>
-		<p>Collaborative filtering-based recommender system deployed on AWS SageMaker for institutional marketing. Drove inbound qualified leads from zero to 60–80 per month in under one month. Combined Bayesian campaign attribution to replace last-click heuristics with probabilistic budget allocation.</p>
-		<div class="skill-tags">
-			<span class="skill-tag teal">AWS SageMaker</span>
-			<span class="skill-tag">Collaborative Filtering</span>
-			<span class="skill-tag">Bayesian Analysis</span>
-			<span class="skill-tag teal">Looker</span>
-		</div>
-	</article>
- 
-	<article>
-		<header>
-			<h2><a href="#">RL-Based Intelligent<br />Chatbot</a></h2>
-		</header>
-		<p>Reinforcement learning chatbot built in Python for student and faculty advisory services — an early applied RL system predating mainstream LLM adoption. Automated FAQ handling and advisory flows for a university population of tens of thousands.</p>
-		<div class="skill-tags">
-			<span class="skill-tag">Reinforcement Learning</span>
-			<span class="skill-tag teal">Python</span>
-			<span class="skill-tag">NLP</span>
-			<span class="skill-tag">Flask</span>
-		</div>
-	</article>
- 
-	<article>
-		<header>
-			<h2><a href="#">Protect the Bank —<br />Vulnerability Remediation</a></h2>
-		</header>
-		<p>Led BMO DnA's 'Protect the Bank' security initiative: audited and remediated OS, DB, and application-layer vulnerabilities across the Dataiku, Datameer, and Neo4j platform estate. Built automated Power BI compliance dashboards tracking live vulnerability metrics and risk posture.</p>
-		<div class="skill-tags">
-			<span class="skill-tag gold">Security</span>
-			<span class="skill-tag teal">Dataiku</span>
-			<span class="skill-tag teal">Neo4j</span>
-			<span class="skill-tag gold">Compliance</span>
-			<span class="skill-tag">Power BI</span>
-		</div>
-	</article>
-</section>
- 
-<hr />
- 
-<!-- ── EXPERIENCE TIMELINE ────────────────────────────────────── -->
-<section id="experience">
-	<span class="section-label">Career History</span>
-	<h2 style="font-family: var(--ff-display); margin-bottom:2rem;">Professional Experience</h2>
- 
-	<div class="timeline">
- 
-		<div class="timeline-item">
-			<div class="timeline-date">Apr 2024 – Present</div>
-			<div class="timeline-role">Data Scientist</div>
-			<div class="timeline-org">Bank of Montreal (BMO) &nbsp;·&nbsp; Toronto, ON</div>
-			<ul class="timeline-bullets">
-				<li>ML model for ITSM change-risk prediction — NLP on unstructured change records to detect high-risk changes before they cause outages</li>
-				<li>AI-driven Resiliency Scoring pipeline (Dataiku + Redshift + Power BI) — continuous application health scoring across BMO's technology estate <span class="award-ribbon" style="font-size:0.6rem; padding:0.1rem 0.45rem;">★ Award</span></li>
-				<li>Enterprise T&amp;O Management dashboard across 8 business units — C-suite workforce and vendor intelligence <span class="award-ribbon" style="font-size:0.6rem; padding:0.1rem 0.45rem;">★ Award</span></li>
-				<li>Automated KPI Scorecard in Power BI replacing manual reporting with a live, self-updating decision layer <span class="award-ribbon" style="font-size:0.6rem; padding:0.1rem 0.45rem;">★ Award</span></li>
-				<li>Real-time SRE dashboards; automated ingestion from Netezza/Redshift/MariaDB via AWS Glue + Power Automate</li>
-			</ul>
-		</div>
- 
-		<div class="timeline-item">
-			<div class="timeline-date">May 2021 – Jul 2023</div>
-			<div class="timeline-role">Big Data Developer</div>
-			<div class="timeline-org">Bank of Montreal (BMO) &nbsp;·&nbsp; Toronto, ON</div>
-			<ul class="timeline-bullets">
-				<li>Owned Dataiku DSS, Datameer, and Neo4j platforms + vendor relationships for the DnA org (~$4M platform asset responsibility) <span class="award-ribbon" style="font-size:0.6rem; padding:0.1rem 0.45rem;">★ Award</span></li>
-				<li>POC: AWS Databrew &amp; Glue Studio evaluated as cloud-native replacement for on-prem Datameer</li>
-				<li>'Protect the Bank' initiative — platform vulnerability audit and automated compliance dashboards <span class="award-ribbon" style="font-size:0.6rem; padding:0.1rem 0.45rem;">★ Award</span></li>
-				<li>Self-serve BI solutions and SQL data pipelines for enterprise analytics across the organization</li>
-			</ul>
-		</div>
- 
-		<div class="timeline-item">
-			<div class="timeline-date">Jun 2019 – Feb 2020</div>
-			<div class="timeline-role">Associate, Quality &amp; Data Analytics</div>
-			<div class="timeline-org">Celestica Inc &nbsp;·&nbsp; Toronto, ON</div>
-			<ul class="timeline-bullets">
-				<li>FRACA analysis using SAP and Tableau; Six Sigma/Lean quality improvement for aerospace manufacturing</li>
-				<li>Integrated quality checklist data with Spectrum PRO ERP and BI dashboards across the full product lifecycle</li>
-			</ul>
-		</div>
- 
-		<div class="timeline-item">
-			<div class="timeline-date">Jul 2011 – Feb 2019</div>
-			<div class="timeline-role">Assistant Professor &amp; Head, Data Science / ML Labs</div>
-			<div class="timeline-org">Lovely Professional University &nbsp;·&nbsp; Punjab, India</div>
-			<ul class="timeline-bullets">
-				<li>487% institutional revenue growth via 10M+ row behavioral data analysis using SQL and Python</li>
-				<li>Collaborative filtering recommender system on AWS SageMaker — 0 → 60–80 qualified leads/month in &lt;1 month</li>
-				<li>RL-based intelligent chatbot + NLP item selection system (TF-IDF, SVM) built in Python</li>
-				<li>Bayesian multi-channel marketing attribution replacing last-click heuristics</li>
-				<li>Taught AI, Neural Networks, Fuzzy Mathematics, DSA at postgraduate level; guided research students</li>
-				<li>Recipient: <strong style="color:var(--gold)">Young Researcher Award</strong> for applied ML research contributions</li>
-			</ul>
-		</div>
- 
-	</div>
-</section>
- 
-<hr />
- 
-<!-- ── RESEARCH DIRECTIONS ────────────────────────────────────── -->
-<section id="research">
-	<span class="section-label">Research Agenda</span>
-	<h2 style="font-family: var(--ff-display); margin-bottom: 0.5rem;">Research Directions</h2>
-	<p style="color: var(--mid); margin-bottom: 2rem; font-size:0.9rem;">Active research problems I investigate, grounded in production ML experience.</p>
- 
-	<div class="research-grid">
- 
-		<div class="research-card">
-			<div class="research-num">DIRECTION 01</div>
-			<h3>Proactive Information Triage in AI Systems</h3>
-			<p>Transferring ITSM change-risk methodology to AI retrieval: ranking retrieved information not just by relevance, but by decision-criticality — accounting for recency, source authority, and contradiction signals. How do you surface the right information at the right moment at web scale?</p>
-			<div class="skill-tags" style="margin-top:1rem;">
-				<span class="skill-tag">IR Reranking</span>
-				<span class="skill-tag">LLM Eval</span>
-				<span class="skill-tag teal">RAG</span>
+	<head>
+		<title>Massively by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<!-- Intro -->
+					<div id="intro">
+						<h1>Mohinder Bassi <br />
+						</h1>
+						<p> Get to know something about me, instead of a plain resume.
+						<ul class="actions">
+							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+						</ul>
+					</div>
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Mohinder BAssi</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li class="active"><a href="index.html">My Journey</a></li>
+												</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/mohinder-bassi-14903aaa/" class="icon brands fa-linkedin"><span class="label">Instagram</span></a></li>
+					    	</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+					
+                                                <!-- Featured Post -->
+							<article class="post featured2">
+								<header class="major">
+									<span class="date">Mar 31st, 2020</span>
+									<h2><a href="#">Power BI Essential Training 2019<br />
+									BY LinkedIn</a></h2>
+									<p> Built advanced visualization dashboards using Power Query in Power BI</p>
+								</header>
+								<a href="#" class="image fit"><img src="https://i.ibb.co/DtCzhJ1/Power-BI.jpg" alt="" /></a>
+								<ul class="actions special">
+								</ul>
+							</article>
+						<!-- Featured Post -->
+							<article class="post featured3">
+								<header class="major">
+									<span class="date">Apr 27, 2020</span>
+									<h2><a href="#">Introduction to machine learning with Python and Azure notebooks<br />
+									BY Microsoft Azure</a></h2>
+									<p> Performed Data analysis on various use cases in MS Azure</p>
+								</header>
+								<a href="#" class="image fit"><img src="https://i.ibb.co/TPCV7bJ/Azure.png" alt="" /></a>
+								<ul class="actions special">
+								</ul>
+							</article>
+						<!-- Featured Post -->
+							<article class="post featured">
+								<header class="major">
+									<span class="date">May 6th, 2020</span>
+									<h2><a href="#">Data analysis using python<br />
+									BY IBM</a></h2>
+									<p> Analyzed data in Python using multi-dimensional arrays, manipulating DataFrames in pandas, using SciPy library of mathematical routines and performing machine learning using scikit-learn. This includes hands-on demonstration using Jupyter notebook in JupyterLab Python tools.</p>
+								</header>
+								<a href="#" class="image fit"><img src="https://images.youracclaim.com/size/680x680/images/ba34cb1c-4344-43f5-9685-55e2e901c0f0/Data_Analysis_using_Python.png" alt="" /></a>
+								<ul class="actions special">
+								</ul>
+							</article>	
+						<!-- Posts -->
+							<section class="posts">
+								<article>
+									<header>
+										<span class="date">May 3, 2020</span>
+										<h2><a href="#">Python for Data Science<br />
+										BY IBM</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="https://images.youracclaim.com/size/680x680/images/84ac9eff-b8a2-4683-846b-f59887a73801/Python%2B101%2BData%2BScience.png" alt="" /></a>
+									<p>Written Python scripts and performed data analysis using IBM's Jupyter-based lab environment.</p>
+									<ul class="actions special">
+																		</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">April 27, 2020</span>
+										<h2><a href="#">Big Data Foundations<br />
+										By IBM</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="https://images.youracclaim.com/size/680x680/images/16d5a420-770b-4699-97ec-46708e3680c5/Big%2BData%2BFound%2BLevel%2B1%2B-%2BCC%2B-%2B2019.png" alt="" /></a>
+									<p>Learnt Big Data concepts and their applications to gain insight for providing better service to customers. I understood that Big Data should be processed in a platform that can handle the variety, velocity, and the volume of data by using components that require integration and data governance.</p>
+									<ul class="actions special">
+										</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">Mar 21, 2020</span>
+										<h2><a href="#">Python bootcamp<br />
+										BY UDEMY</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="https://udemy-certificate.s3.amazonaws.com/image/UC-d1fea01f-67bd-4fab-af7d-5592c38c8d12.jpg?v=1584848412000" alt="" /></a>
+									<p>Created games with Python, like Tic Tac Toe and Blackjack!
+										Learnt advanced Python features, like the collections module and how to work with timestamps!
+										Learnt to use Object Oriented Programming with classes!
+										Understood complex topics, like decorators.
+										Understood how to use both the Jupyter Notebook and create .py files
+										Created GUIs in the Jupyter Notebook system!
+										Built a complete understanding of Python from the ground up!</p>
+									<ul class="actions special">
+										
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">Mar 20, 2020</span>
+										<h2><a href="#">B.I Analyst<br />
+										BY Udemy</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="https://udemy-certificate.s3.amazonaws.com/image/UC-de7035af-4299-46e4-ab9e-112c56786649.jpg?v=1584762353000" alt="" /></a>
+									<p> Used data for improved business decision-making.
+										Presented information in the form of metrics, KPIs, reports, and dashboards.
+										Performed quantitative and qualitative business analysis.
+										Discovered how to find trends, market conditions, and research competitor positioning.
+										Used SQL to create, design, and manipulate SQL databases.
+										Extracted data from a database writing your own queries.
+										Created powerful professional visualizations in Tableau.
+										Solved real-world business analysis tasks in SQL and Tableau</p>
+									<ul class="actions special">
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">April 25, 2020</span>
+										<h2><a href="#">Project-Analyze climate data<br />
+										BY Microsoft Azure</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="https://docs.microsoft.com/en-us/learn/achievements/student-evangelism/analyze-climate-data-with-azure-notebooks-badge.svg" alt="" /></a>
+									<p>Created an Azure Notebook and used three popular Python libraries to analyze climate data collected by NASA</p>
+									<ul class="actions special">
+										</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">April 26, 2020</span>
+										<h2><a href="#">Project-Predict flight delays<br />
+										BY Microsoft Azure</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="https://docs.microsoft.com/en-us/learn/achievements/student-evangelism/predict-flight-delays-with-python-badge.svg" alt="" /></a>
+									<p>Imported airline arrival data into a Jupyter notebook and used Pandas to clean it. Then, built a machine learning model with Scikit-Learn and used Matplotlib to visualize output.</p>
+									<ul class="actions special">
+									</ul>
+								</article>
+							</section>
+
+						
+
+					</div>
+
+				
+
+
 			</div>
-		</div>
- 
-		<div class="research-card">
-			<div class="research-num">DIRECTION 02</div>
-			<h3>Resiliency Scoring for AI Retrieval Pipelines</h3>
-			<p>Adapting multi-signal composite scoring from BMO's Resiliency Dashboard to measure retrieval pipeline health — combining freshness, source diversity, contradiction rates, and answer confidence. Designing dynamic routing under retrieval signal failure.</p>
-			<div class="skill-tags" style="margin-top:1rem;">
-				<span class="skill-tag teal">Pipeline Eval</span>
-				<span class="skill-tag">Anomaly Detection</span>
-				<span class="skill-tag">Systems ML</span>
-			</div>
-		</div>
- 
-		<div class="research-card">
-			<div class="research-num">DIRECTION 03</div>
-			<h3>Cross-Lingual Information Access &amp; Retrieval Equity</h3>
-			<p>Rigorously measuring the retrieval quality gap between English and lower-resource languages (Hindi, Punjabi, Tamil, etc.) and proposing targeted interventions — informed by 8 years building and operating multilingual data systems for South Asian user populations.</p>
-			<div class="skill-tags" style="margin-top:1rem;">
-				<span class="skill-tag gold">Multilingual NLP</span>
-				<span class="skill-tag">Embedding Models</span>
-				<span class="skill-tag teal">Cross-lingual IR</span>
-			</div>
-		</div>
- 
-	</div>
- 
-	<div class="highlight-quote" style="margin-top: 2rem;">
-		"The problems I care most about — how people find, trust, and act on information — don't change when you move between academia, banking, and AI research. They just get harder and more important."
-	</div>
-</section>
- 
-<hr />
- 
-<!-- ── SKILLS ──────────────────────────────────────────────────── -->
-<section id="skills">
-	<span class="section-label">Technical Competencies</span>
-	<h2 style="font-family: var(--ff-display); margin-bottom: 1.5rem;">Skills &amp; Stack</h2>
- 
-	<div class="skill-matrix">
- 
-		<div class="skill-group">
-			<div class="skill-group-label">ML &amp; AI</div>
-			<div class="skill-tags">
-				<span class="skill-tag">Deep Learning</span>
-				<span class="skill-tag">Gradient Boosting</span>
-				<span class="skill-tag">SVM / TF-IDF</span>
-				<span class="skill-tag">Collaborative Filtering</span>
-				<span class="skill-tag">Reinforcement Learning</span>
-				<span class="skill-tag">Bayesian Inference</span>
-				<span class="skill-tag">Causal Inference</span>
-				<span class="skill-tag">Anomaly Detection</span>
-			</div>
-		</div>
- 
-		<div class="skill-group">
-			<div class="skill-group-label">GenAI &amp; Agentic Systems</div>
-			<div class="skill-tags">
-				<span class="skill-tag teal">AWS Bedrock</span>
-				<span class="skill-tag teal">RAG</span>
-				<span class="skill-tag teal">LangChain</span>
-				<span class="skill-tag teal">Prompt Engineering</span>
-				<span class="skill-tag teal">LLM Evaluation</span>
-				<span class="skill-tag teal">Agentic Workflows</span>
-			</div>
-		</div>
- 
-		<div class="skill-group">
-			<div class="skill-group-label">Platforms</div>
-			<div class="skill-tags">
-				<span class="skill-tag">Dataiku DSS</span>
-				<span class="skill-tag">AWS SageMaker</span>
-				<span class="skill-tag">Datameer</span>
-				<span class="skill-tag">Neo4j</span>
-				<span class="skill-tag">IBM Cloud</span>
-				<span class="skill-tag">Databricks</span>
-			</div>
-		</div>
- 
-		<div class="skill-group">
-			<div class="skill-group-label">Cloud &amp; Big Data</div>
-			<div class="skill-tags">
-				<span class="skill-tag teal">AWS Glue</span>
-				<span class="skill-tag teal">AWS Redshift</span>
-				<span class="skill-tag teal">AWS Bedrock</span>
-				<span class="skill-tag">GCP BigQuery</span>
-				<span class="skill-tag">Azure</span>
-				<span class="skill-tag">Hadoop</span>
-				<span class="skill-tag">PySpark</span>
-				<span class="skill-tag">IBM Netezza</span>
-			</div>
-		</div>
- 
-		<div class="skill-group">
-			<div class="skill-group-label">Languages</div>
-			<div class="skill-tags">
-				<span class="skill-tag gold">Python</span>
-				<span class="skill-tag gold">SQL</span>
-				<span class="skill-tag">R</span>
-				<span class="skill-tag">PySpark</span>
-				<span class="skill-tag">SAS</span>
-				<span class="skill-tag">C++</span>
-				<span class="skill-tag">DAX</span>
-			</div>
-		</div>
- 
-		<div class="skill-group">
-			<div class="skill-group-label">BI &amp; Visualization</div>
-			<div class="skill-tags">
-				<span class="skill-tag">Power BI</span>
-				<span class="skill-tag">Tableau</span>
-				<span class="skill-tag">Looker</span>
-				<span class="skill-tag teal">Power Automate</span>
-				<span class="skill-tag">Flask</span>
-				<span class="skill-tag">JIRA</span>
-				<span class="skill-tag">ServiceNow</span>
-			</div>
-		</div>
- 
-	</div>
-</section>
- 
-<hr />
- 
-<!-- ── AWARDS ──────────────────────────────────────────────────── -->
-<section id="awards">
-	<span class="section-label">Recognition</span>
-	<h2 style="font-family: var(--ff-display); margin-bottom: 1.5rem;">Awards &amp; Certifications</h2>
- 
-	<div class="award-card">
-		<div class="award-icon">🏆</div>
-		<div>
-			<div class="award-title">BMO Spotlight Award × 3 &nbsp;—&nbsp; 2024</div>
-			<p class="award-desc">T&amp;O Management Reporting Dashboard · AI Resiliency Scoring System · Automated KPI Scorecard</p>
-		</div>
-	</div>
- 
-	<div class="award-card">
-		<div class="award-icon">🏆</div>
-		<div>
-			<div class="award-title">BMO Spotlight Award × 2 &nbsp;—&nbsp; 2022</div>
-			<p class="award-desc">'Protect the Bank' vulnerability remediation initiative · Dataiku / Datameer / Neo4j platform ownership (~$4M asset)</p>
-		</div>
-	</div>
- 
-	<div class="award-card">
-		<div class="award-icon">🎓</div>
-		<div>
-			<div class="award-title">Young Researcher Award &nbsp;—&nbsp; Lovely Professional University</div>
-			<p class="award-desc">Recognized for applied ML research contributions including RL chatbot, recommender systems, and Bayesian attribution.</p>
-		</div>
-	</div>
- 
-	<br />
-	<span class="section-label">Certifications</span>
-	<div class="cert-grid" style="margin-top:0.8rem;">
-		<div class="cert-item"><span class="cert-logo">IIBA</span> CBAP Certified</div>
-		<div class="cert-item"><span class="cert-logo">AWS</span> Machine Learning</div>
-		<div class="cert-item"><span class="cert-logo">AWS</span> Data Science</div>
-		<div class="cert-item"><span class="cert-logo">AWS</span> Cloud Practitioner</div>
-		<div class="cert-item"><span class="cert-logo">GCP</span> Big Data &amp; ML</div>
-		<div class="cert-item"><span class="cert-logo">IBM</span> Python for DS</div>
-		<div class="cert-item"><span class="cert-logo">IBM</span> Data Analysis</div>
-		<div class="cert-item"><span class="cert-logo">IBM</span> Data Visualization</div>
-		<div class="cert-item"><span class="cert-logo">IBM</span> Big Data Foundations</div>
-		<div class="cert-item"><span class="cert-logo">MS</span> Power BI</div>
-		<div class="cert-item"><span class="cert-logo">UDM</span> Applied ML</div>
-		<div class="cert-item"><span class="cert-logo">UDM</span> Python Bootcamp</div>
-	</div>
-</section>
- 
-<hr />
- 
-<!-- ── EDUCATION ──────────────────────────────────────────────── -->
-<section>
-	<span class="section-label">Academic Background</span>
-	<h2 style="font-family: var(--ff-display); margin-bottom: 1.5rem;">Education</h2>
- 
-	<div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1.2rem;">
-		<div class="skill-group">
-			<div class="skill-group-label">Postgraduate</div>
-			<div style="font-family: var(--ff-display); font-size: 1rem; color:#fff; margin-bottom:0.3rem; font-weight:700;">M.Tech — ECE <span style="color:var(--gold); font-size:0.75rem;">(with Distinction)</span></div>
-			<div style="font-size:0.82rem; color:var(--mid);">Lovely Professional University, Punjab, India &nbsp;·&nbsp; 2011–2014</div>
-			<div style="font-size:0.75rem; color:var(--teal); margin-top:0.3rem; font-family:var(--ff-mono);">Adjudicated as Master's Degree by WES Canada</div>
-		</div>
-		<div class="skill-group">
-			<div class="skill-group-label">Undergraduate</div>
-			<div style="font-family: var(--ff-display); font-size: 1rem; color:#fff; margin-bottom:0.3rem; font-weight:700;">B.Tech — ECE <span style="color:var(--gold); font-size:0.75rem;">(with Distinction)</span></div>
-			<div style="font-size:0.82rem; color:var(--mid);">Punjab Technical University, India &nbsp;·&nbsp; 2007–2011</div>
-			<div style="font-size:0.75rem; color:var(--teal); margin-top:0.3rem; font-family:var(--ff-mono);">Adjudicated as 4-Year Bachelor's Degree by WES Canada</div>
-		</div>
-	</div>
-</section>
- 
-</div><!-- /#main -->
- 
-<!-- ══════════════ FOOTER ══════════════ -->
-<footer id="footer">
-	<section>
-		<h3 style="font-family: var(--ff-display);">Let's Connect</h3>
-		<p style="color: var(--mid); font-size: 0.88rem; line-height: 1.7;">
-			I'm open to research collaborations, senior data science roles, and conversations about AI systems, information retrieval, and the future of how people interact with knowledge.
-		</p>
-		<ul class="actions">
-			<li><a href="mailto:mohinderbassi@gmail.com" class="button primary">Email Me</a></li>
-		</ul>
-	</section>
-	<section class="split contact">
-		<section>
-			<h3>Location</h3>
-			<p>Toronto, Ontario, Canada<br /><span style="color:var(--teal); font-family: var(--ff-mono); font-size:0.78rem;">🇨🇦 Canadian Citizen — Open to relocation</span></p>
-		</section>
-		<section>
-			<h3>Phone</h3>
-			<p><a href="tel:+14372308262">+1 (437) 230-8262</a></p>
-		</section>
-		<section>
-			<h3>Email</h3>
-			<p><a href="mailto:mohinderbassi@gmail.com">mohinderbassi@gmail.com</a></p>
-		</section>
-		<section>
-			<h3>Online</h3>
-			<ul class="icons alt">
-				<li><a href="https://www.linkedin.com/in/mohinder-bassi-14903aaa/" class="icon brands alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
-				<li><a href="https://github.com/mohinderbassi" class="icon brands alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
-			</ul>
-		</section>
-	</section>
-</footer>
- 
-<div id="copyright">
-	<ul>
-		<li>&copy; Mohinder Bassi 2026</li>
-		<li>Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
-	</ul>
-</div>
- 
-</div><!-- /#wrapper -->
- 
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.scrollex.min.js"></script>
-<script src="assets/js/jquery.scrolly.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
- 
-<script>
-	// Smooth scroll for in-page nav links
-	document.querySelectorAll('a[href^="#"]').forEach(a => {
-		a.addEventListener('click', e => {
-			const target = document.querySelector(a.getAttribute('href'));
-			if (target) {
-				e.preventDefault();
-				target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-			}
-		});
-	});
- 
-	// Staggered entrance for stat items
-	const statItems = document.querySelectorAll('.stat-item');
-	const observer = new IntersectionObserver(entries => {
-		entries.forEach((entry, i) => {
-			if (entry.isIntersecting) {
-				setTimeout(() => {
-					entry.target.style.opacity = '1';
-					entry.target.style.transform = 'translateY(0)';
-				}, i * 120);
-				observer.unobserve(entry.target);
-			}
-		});
-	}, { threshold: 0.2 });
- 
-	statItems.forEach(el => {
-		el.style.opacity = '0';
-		el.style.transform = 'translateY(16px)';
-		el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-		observer.observe(el);
-	});
- 
-	// Staggered entrance for research cards
-	const cards = document.querySelectorAll('.research-card');
-	const cardObs = new IntersectionObserver(entries => {
-		entries.forEach((entry, i) => {
-			if (entry.isIntersecting) {
-				setTimeout(() => {
-					entry.target.style.opacity = '1';
-					entry.target.style.transform = 'translateY(0)';
-				}, i * 150);
-				cardObs.unobserve(entry.target);
-			}
-		});
-	}, { threshold: 0.1 });
- 
-	cards.forEach(el => {
-		el.style.opacity = '0';
-		el.style.transform = 'translateY(20px)';
-		el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-		cardObs.observe(el);
-	});
-</script>
- 
-</body>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
